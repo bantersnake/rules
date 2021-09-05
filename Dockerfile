@@ -6,7 +6,8 @@ COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o battlesnake -a -ldflags '-extldflags "-static"' ./cli/battlesnake/main.go
 
-FROM scratch
+FROM alpine
+# FROM scratch
 
 COPY --from=builder /build/battlesnake /app/battlesnake
 
