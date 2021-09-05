@@ -34,16 +34,16 @@ const (
 )
 
 type Point struct {
-	X int32
-	Y int32
+	X int32 `json:"x"`
+	Y int32 `json:"y"`
 }
 
 type Snake struct {
-	ID              string
-	Body            []Point
-	Health          int32
-	EliminatedCause string
-	EliminatedBy    string
+	ID              string  `json:"id"`
+	Body            []Point `json:"body"`
+	Health          int32   `json:"health"`
+	EliminatedCause string  `json:"eliminated_cause"`
+	EliminatedBy    string  `json:"eliminated_by"`
 }
 
 type SnakeMove struct {

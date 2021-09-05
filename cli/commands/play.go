@@ -159,7 +159,9 @@ var run = func(cmd *cobra.Command, args []string) {
 		if ViewMap {
 			printMap(state, Turn)
 		} else {
-			log.Printf("[%v]: State: %v\n", Turn, state)
+			// log.Printf("[%v]: State: %v\n", Turn, state)
+			stateB, _ := json.Marshal(state)
+			fmt.Println(string(stateB))
 		}
 
 		if TurnDelay > 0 {
@@ -330,7 +332,7 @@ func getMoveForSnake(ruleset rules.Ruleset, state *rules.BoardState, snake Battl
 	move := snake.LastMove
 	if err != nil {
 		log.Printf("[WARN]: Request to %v failed\n", u.String())
-		log.Printf("Body --> %v\n", string(requestBody))
+		// log.Printf("Body --> %v\n", string(requestBody))
 	} else if res.Body != nil {
 		defer res.Body.Close()
 		body, readErr := ioutil.ReadAll(res.Body)
