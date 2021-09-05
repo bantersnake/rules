@@ -13,4 +13,4 @@ COPY --from=builder /build/battlesnake /app/battlesnake
 
 WORKDIR /app
 
-CMD ["./battlesnake"]
+ENTRYPOINT ["./battlesnake"]
