@@ -1,0 +1,7 @@
+.github/
+.vscode/
+.git/
+.goreleaser.yml
+*.md
+LICENSE
+modd.conf
