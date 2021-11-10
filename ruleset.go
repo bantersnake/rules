@@ -39,11 +39,12 @@ type Point struct {
 }
 
 type Snake struct {
-	ID              string  `json:"id"`
-	Body            []Point `json:"body"`
-	Health          int32   `json:"health"`
-	EliminatedCause string  `json:"eliminated_cause"`
-	EliminatedBy    string  `json:"eliminated_by"`
+	ID               string  `json:"id"`
+	Body             []Point `json:"body"`
+	Health           int32   `json:"health"`
+	EliminatedCause  string  `json:"eliminated_cause"`
+	EliminatedOnTurn int32   `json:"eliminated_on_turn"`
+	EliminatedBy     string  `json:"eliminated_by"`
 }
 
 type SnakeMove struct {
